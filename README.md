@@ -1,13 +1,9 @@
 # Puilolive Production
 Puilolive Production is a project formed from a EITC project. In this project, we will develop a Gym room system. This is a gym + face recognition application.
-## Form of the App
-- [Javascript + react](https://www.youtube.com/watch?v=CVClHLwv-4I) / Go web application
-- Android: Android studio w/ Java
-- Unity (weird choice but somehow works **maybe**)
-- Python PC application
-- Magic Mirror + Rasberry pi (somehow it is complexer than the other options)
+## Made by:
+- Python + Eel (UI part)
 ## What can the application do?
-It is so called "Gym's health companion".
+It is called "PuiFit".
 It can:
 - giving advice, 
 - recording your habbit (but wt habbit?), 
@@ -15,7 +11,7 @@ It can:
 - making a report on yourselves, 
 - AI couch, 
 - Set and helping you to achieve a goal, 
-- PuiHomeSafe (安心pui pui)
+- PuiHomeSafe (安心 pui pui)
 ## What hardware does it requires?
 - webcam/camera (phone camera is fine), 
 - monitor/magic mirror, 
