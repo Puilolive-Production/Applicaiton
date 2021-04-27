@@ -1,14 +1,12 @@
-import eel
+from login.login import *
+from face_recognition.face_recognition import *
 
-# Set web files folder and optionally specify which file types to check for eel.expose()
-#   *Default allowed_extensions are: ['.js', '.html', '.txt', '.htm', '.xhtml']
-eel.init('web', allowed_extensions=['.js', '.html'])
+choice = sl_choice()
 
-@eel.expose                         # Expose this function to Javascript
-def say_hello_py(x):
-    print('Hello from %s' % x)
+if choice.capitalize() == 'S':
+    user_name = signup()
+    input_faces(user_name)
 
-say_hello_py('Python World!')
-eel.say_hello_js('Python World!')   # Call a Javascript function
-
-eel.start('hello.html')             # Start (this blocks and enters loop)
+if choice.capitalize() == 'L':
+    user_name = login()
+    
