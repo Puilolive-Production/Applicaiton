@@ -1,7 +1,8 @@
 import cv2
-import time
+import sys 
 import os
-from face_recognition.face_recognition import input_faces
+sys.path.append(os.path.abspath("/face_recognition_part"))
+from face_recognition_part.face_recogn import input_faces
 
 def sl_choice():
     boool = False
@@ -18,6 +19,7 @@ def signup():
         disclaim = input('We need your photos for analyzing. Would you mind us taking a picture of you? (Y/N) ')
         if disclaim.capitalize() == "Y":
             input_faces(user_name)
+    return user_name
         
 def login():
     login_choice = input('Login with (F) ace detection or (P) assword? ')
