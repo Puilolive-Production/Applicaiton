@@ -1,8 +1,9 @@
 import cv2
 import sys 
 import os
-sys.path.append(os.path.abspath("/face_recognition_part"))
-from face_recognition_part.face_recogn import input_faces
+sys.path.append(os.path.abspath("/face"))
+from face.face_recognition_windows import input_faces, face_recogn
+import ntpath
 
 def sl_choice():
     boool = False
@@ -22,10 +23,5 @@ def signup():
     return user_name
         
 def login():
-    login_choice = input('Login with (F) ace detection or (P) assword? ')
-    if login_choice.capitalize() == "F":
-        user_name = input('Please enter your username: ')
-        return user_name
-    elif login_choice.capitalize() == "P": 
-        user_name = input('Please enter your username: ')
-        user_password = input('Please enter your password: ')
+    user_name = ntpath.basename(str(face_recogn()))[:-4]
+    print(user_name)
