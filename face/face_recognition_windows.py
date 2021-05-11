@@ -17,7 +17,7 @@ def input_faces(user_name):
     # Define a video capture object
     start_time = time.time()
 
-    path = 'face/known-pics'
+    path = 'face/known_pics'
     while(True):
         # Capture the video frame by frame
         ret, frame = video_capture.read()
@@ -36,8 +36,7 @@ def input_faces(user_name):
     # Destroy all the windows
     cv2.destroyAllWindows()
     # Load a sample picture and learn how to recognize it.
-    result  = DeepFace.verify("face/{}.png".format(user_name))
-    print("Is verified: ", result["verified"])
+    result  = DeepFace.find(img_path="{}.png".format(user_name), db_path="face/known_pics")
 
 def face_recogn():
     # Define a video capture object
@@ -59,10 +58,11 @@ def face_recogn():
 
     video_capture.release()
     cv2.destroyAllWindows()
-    df = DeepFace.find(img_path = "face/unknown_face/unknown_img.png", db_path = 'face/known-pics')
+    df = DeepFace.find(img_path = "face/unknown_face/unknown_img.png", db_path = 'face/known_pics')
     if df.shape[0] > 0:
         matched = df.iloc[0].identity
         print(matched)
     return matched
         
 
+# input_faces("Peter")
