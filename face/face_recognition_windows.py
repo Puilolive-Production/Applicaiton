@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 # Get a reference to webcam #0 (the default one)
-video_capture = cv2.VideoCapture(1)
+video_capture = cv2.VideoCapture(0)
 
 def input_faces(user_name):
     # Define a video capture object

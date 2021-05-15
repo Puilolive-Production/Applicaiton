@@ -5,6 +5,7 @@ from face.face_recognition_windows import *
 
 sys.path.append(os.path.abspath("/face"))
 
+
 # User choose to login or sign up
 choice = sl_choice()
 
