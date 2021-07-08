@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="eel.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Test</title>
+</head>
+
+<script>
+    function callFaceRec() {
+        eel.face_recogn()(processAcknowledgement_FaceRec);
+    }
+
+    function processAcknowledgement_FaceRec(result) {
+        if (result == "ok") {
+            window.location = "user_homepage.html";
+        }
+    }
+
+    window.onload = callFaceRec;
+</script>
+
+<body>
+    <div class="return_bar">
+        <a href="main.html"><input class="chevron-img" type="image" src="img/chevron/chevron-left.svg" /></a>
+    </div>
+    <div class="contents">
+        <div class="upper-words" style="font-size: 30px; color: #565656;">Detecting your awesome face...</div>
+        <div class="lower-words" style="font-size: 20px; color: #848484; margin-top: 1.8vh;">It won’t take long...</div>
+        <img src="img/login/man-running.gif" alt="Loading..." style="width: 85vw; margin-top: 3vh;">
+    </div>
+</body>
+
+</html>

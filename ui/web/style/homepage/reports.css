@@ -1,0 +1,14 @@
+.report-box {
+    margin-bottom: 2.7vh;
+    margin-right: 3.7vh;
+    padding: 30px;
+    color: rgb(221, 221, 221);
+    text-align: left;
+    border-radius: 20px;
+}
+
+.month-title {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 3vh;
+}

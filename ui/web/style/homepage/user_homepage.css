@@ -1,0 +1,100 @@
+.nav {
+    margin-top: 4vh;
+    margin-left: 40px;
+    font-size: 26px;
+    color: #565656;
+}
+
+.boxed-content {
+    height: 250px;
+    width: 250px;
+    background-color: #555;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Create two equal columns that floats next to each other */
+
+.column {
+    float: left;
+    width: 205px;
+    padding: 10px;
+    height: 205px;
+    border-radius: 30px;
+    /* Should be removed. Only for demonstration */
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.title {
+    text-align: left;
+    margin-bottom: 3vh;
+    margin-left: -1vw;
+    font-size: 24px;
+    color: #565656;
+}
+
+.info-title {
+    text-align: left;
+    font-size: 16px;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+.info-01 {
+    text-align: right;
+    font-size: 50px;
+    margin-left: 2vw;
+    margin-top: 3vh;
+}
+
+.info-02 {
+    text-align: right;
+    font-size: 13px;
+    margin-left: 2vw;
+    margin-top: .05vh;
+}
+
+.events-choice-btn {
+    width: 94%;
+    margin-left: -8vw;
+}
+
+.events-choice-text {
+    position: absolute;
+    font-size: 25px;
+    bottom: 24px;
+    left: 16px;
+    color: white;
+}
+
+.container {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(54, 54, 54, 0.116);
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}

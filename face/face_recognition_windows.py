@@ -2,22 +2,23 @@ from deepface import DeepFace
 import cv2
 import time
 import os
+import eel
 import numpy as np
 from PIL import Image, ImageDraw
 from IPython.display import display
 import pandas as pd
 from pathlib import Path
-
-
+import sys
 
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
 
+@eel.expose
 def input_faces(user_name):
     # Define a video capture object
     start_time = time.time()
 
-    path = 'face/known_pics'
+    path = os.getcwd() + '\\face\known_pics'
     while(True):
         # Capture the video frame by frame
         ret, frame = video_capture.read()
@@ -36,12 +37,14 @@ def input_faces(user_name):
     # Destroy all the windows
     cv2.destroyAllWindows()
     # Load a sample picture and learn how to recognize it.
-    result  = DeepFace.find(img_path="{}.png".format(user_name), db_path="face/known_pics")
+    result  = DeepFace.find(img_path="{}.png".format(user_name), db_path=os.getcwd() + '\\face\known_pics')
 
+
+@eel.expose
 def face_recogn():
     # Define a video capture object
     start_time = time.time()
-    path = 'face/unknown_face'
+    path = 'unknown_face'
     while(True):
         # Capture the video frame by frame
         ret, frame = video_capture.read()
@@ -58,11 +61,8 @@ def face_recogn():
 
     video_capture.release()
     cv2.destroyAllWindows()
-    df = DeepFace.find(img_path = "face/unknown_face/unknown_img.png", db_path = 'face/known_pics')
+    df = DeepFace.find(img_path = "unknown_face/unknown_img.png", db_path = 'known_pics')
     if df.shape[0] > 0:
         matched = df.iloc[0].identity
         print(matched)
     return matched
-        
-
-# input_faces("Peter")

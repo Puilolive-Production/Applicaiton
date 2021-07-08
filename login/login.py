@@ -1,4 +1,3 @@
-import cv2
 import sys 
 import os
 sys.path.append(os.path.abspath("/face"))
@@ -13,8 +12,7 @@ def sl_choice():
             boool = True
             return choice
         
-def signup():
-    user_name = input('Please enter your username: ')
+def signup(usr_name):
     disclaim_bool = False
     while disclaim_bool == False:
         disclaim = input('We need your photos for analyzing. Would you mind us taking a picture of you? (Y/N) ')
