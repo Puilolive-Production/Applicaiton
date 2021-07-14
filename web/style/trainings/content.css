@@ -1,0 +1,14 @@
+.demo-video {
+    text-align: center;
+}
+
+.description {
+    margin-top: 5vh;
+    text-align: left;
+    font-weight: 300;
+    align-items: center;
+}
+
+li {
+    margin-bottom: 10px;
+}
