@@ -1,0 +1,35 @@
+.report-info-title {
+    text-align: left;
+    font-size: 20px;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.report-data {
+    text-align: right;
+    font-size: 60px;
+    margin-left: 10vw;
+    display: inline;
+}
+
+.report-data-unit {
+    text-align: right;
+    font-size: 20px;
+    margin-top: 2vh;
+    display: inline;
+}
+
+.report-last-month-data {
+    text-align: right;
+    font-size: 14px;
+    margin-left: 13.6vw;
+    display: inline;
+}
+
+.report-info-title-full-name {
+    text-align: left;
+    font-size: 11px;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+}

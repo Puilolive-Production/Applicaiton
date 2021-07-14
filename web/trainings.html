@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="eel.js"></script>
+    <link rel="stylesheet" href="style/homepage/user_homepage.css">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<script>
+</script>
+
+<body onload="getUsrname();">
+    <div class="contents" style="margin-left: 38px;">
+        <!DOCTYPE html>
+        <html lang="en">
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="eel.js"></script>
+            <link rel="stylesheet" href="style/homepage/user_homepage.css">
+            <link rel="stylesheet" href="style/main.css">
+            <title>Test</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        </head>
+
+        <script>
+            var currentUsrname = "";
+
+            function getUsrname(usrname) {
+                eel.send_currentUsrname()(processAcknowledgement_currentUsrname);
+            }
+
+            function processAcknowledgement_currentUsrname(result) {
+                console.log(result);
+                document.getElementById('output').innerHTML = result;
+            }
+        </script>
+
+        <body onload="getUsrname();">
+            <div class="contents">
+                <div class="row title" style=" margin-top: 4.6vh; margin-bottom: 4vh;">
+                    <a href="user_homepage.html" style="color: #494949; text-decoration: none;"><img src="img/chevron/chevron-left.svg" style="width: 5.5vw; margin-bottom: -.9vh; margin-right: 1.5vh;">Trainings</a>
+                </div>
+                <div class="row buttons content" style="margin-top: 5vh;">
+                    <a href="push_up.html">
+                        <div class="container" style="margin-bottom: 2.3vh;">
+                            <img src="img/training-section/push_up.jpg" class="events-choice-btn" style="height: 16vh; border-radius: 17px;">
+                            <div class="events-choice-text" style="margin-bottom: 3.2vw;">
+                                <p style="margin-left: 3vw;">Push up</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="dumbbell.html">
+                        <div class="container" style="margin-bottom: 2.3vh;">
+                            <img src="img/training-section/dumbbell.jpg" class="events-choice-btn" style="height: 16vh; border-radius: 17px;">
+                            <div class="events-choice-text" style="margin-bottom: 3.2vw;">
+                                <p style="margin-left: 3vw;">Dumbbell</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="cables.html">
+                        <div class="container" style="margin-bottom: 2.3vh;">
+                            <img src="img/training-section/cables.jpg" class="events-choice-btn" style="height: 16vh; border-radius: 17px;">
+                            <div class="events-choice-text" style="margin-bottom: 3.2vw;">
+                                <p style="margin-left: 3vw;">Cables</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="other_workouts.html">
+                        <div class="container" style="margin-bottom: 2.3vh;">
+                            <img src="img/training-section/other_workouts.jpg" class="events-choice-btn" style="height: 16vh; border-radius: 17px;">
+                            <div class="events-choice-text" style="margin-bottom: 3.2vw;">
+                                <p style="margin-left: 3vw;">Other workouts</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </body>
+    </div>
+</body>
+
+</html>

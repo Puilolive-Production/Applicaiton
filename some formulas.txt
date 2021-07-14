@@ -1,0 +1,19 @@
+BMI:
+  Weight / (Height)^2
+
+TDEE:
+  BMR x 1.55
+
+BMR:
+  Female = 655 + (9.6 x wt in kg) + (1.8 x ht in cm) - (4.7 x age in years)   
+  Male = 66 + (13.7 x wt in kg) + (5 x ht in cm) - (6.8 x age in years)
+
+
+Skeletal Muscle Percentage = (Skeletal Muscle Mass / weight) * 100
+
+Body Fat Percentage = 1.2 * bmi + 0.23 * Age - 5.4 - 10.8 * Gender (男性性别取值为1，女性取值为0)
+
+Weight 
+Height
+Age 
+Gender

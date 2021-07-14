@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="eel.js"></script>
+    <link rel="stylesheet" href="style/homepage/user_homepage.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/reports.css">
+    <script src="scripts/report.js"></script>
+    <title>Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body onload="getcurrentUsrinfo();">
+    <div class="contents" style="margin-left: 38px;">
+        <div class="row title" style=" margin-top: 4.6vh; margin-bottom: 4vh;">
+            <a href="user_homepage.html" style="color: #494949; text-decoration: none;"><img src="img/chevron/chevron-left.svg" style="width: 5.5vw; margin-bottom: -.9vh; margin-right: 1.5vh;">Reports</a>
+        </div>
+        <div class="row">
+            <div class="column" style="background-color:#D3BDB0; margin-right: 3.7vw; color: black; border-radius: 20px;">
+                <div class="report-info-title">Height</div>
+                <div class="report-data">
+                    <p id="currentusrHeight" style="display:inline-block; margin-left: -4vw;"></p>
+                </div>
+                <div class="report-data-unit" style="display:inline-block">cm</div>
+            </div>
+            <div class="column" style="background-color:#C1AE9F; margin-right: 3.7vw; color: black; border-radius: 20px;">
+                <div class="report-info-title">Weight</div>
+                <div class="report-data">
+                    <p id="currentusrCurrentWeight" style="display:inline-block"></p>
+                </div>
+                <div class="report-data-unit" style="display:inline-block">kg</div>
+                <div class="report-last-month-data">Last month: 68 kg</div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="column" style="background-color:#89937C; margin-right: 3.7vw; color: white; border-radius: 20px;">
+                <div class="report-info-title" style="margin-bottom: 0vh;">TDEE</div>
+                <div class="report-info-title-full-name">Total Daily Energy Expenditure</div>
+                <div class="report-data" style="margin-left: 1.5vw;">
+                    <div class="report-data">
+                        <p id="tdee" style="display:inline-block; margin-left: -9.5vw;"></p>
+                    </div>
+                </div>
+                <div class="report-data-unit">Cal</div>
+                <div class="report-last-month-data" style="margin-left: 10.5vw; color: #F8F8F8">Last month: 1680 Cal</div>
+            </div>
+            <div class="column" style="background-color:#7f8380; margin-right: 3.7vw; color: white; border-radius: 20px;">
+                <div class="report-info-title" style="margin-bottom: 0vh;">BMI</div>
+                <div class="report-info-title-full-name">Body Mass Index</div>
+                <div class="report-data" style="margin-left: 11vw;">
+                    <div class="report-data">
+                        <p id="bmi" style="display:inline-block"></p>
+                    </div>
+                </div>
+                <div class="report-last-month-data" style="margin-left: 16.5vw;">Last month: 24</div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px; margin-bottom: 3.7vw;">
+            <div class="column" style="background-color:#7c8793; margin-right: 3.7vw; color: white; border-radius: 20px;">
+                <div class="report-info-title" style="margin-bottom: 0vh;">SMM</div>
+                <div class="report-info-title-full-name">Skeletal Muscle Percentage</div>
+                <div class="report-data" style="margin-left: 4vw;">
+                    <div class="report-data">
+                        <p id="smm" style="display:inline-block;"></p>
+                    </div>
+                </div>
+                <div class="report-data-unit">%</div>
+                <div class="report-last-month-data" style="margin-left: 10.5vw; color: #F8F8F8">Last month: 1680 Cal</div>
+            </div>
+            <div class="column" style="background-color:#937c87; margin-right: 3.7vw; color: white; border-radius: 20px;">
+                <div class="report-info-title" style="margin-bottom: 0vh;">BFP</div>
+                <div class="report-info-title-full-name">Body Fat Percentage</div>
+                <div class="report-data" style="margin-left: 4vw;">
+                    <div class="report-data">
+                        <p id="bfp" style="display:inline-block"></p>
+                    </div>
+                </div>
+                <div class="report-data-unit">%</div>
+                <div class="report-last-month-data" style="margin-left: 16.5vw;">Last month: 24</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

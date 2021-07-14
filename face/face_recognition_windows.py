@@ -8,61 +8,57 @@ from PIL import Image, ImageDraw
 from IPython.display import display
 import pandas as pd
 from pathlib import Path
-import sys
+import config
 
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
 
 @eel.expose
 def input_faces(user_name):
-    # Define a video capture object
-    start_time = time.time()
+    path = os.getcwd() + r"\face\known_pics\{}".format(user_name)
+    os.mkdir(path)
+    
+    ret, frame = video_capture.read()
+    d = 0
 
-    path = os.getcwd() + '\\face\known_pics'
-    while(True):
-        # Capture the video frame by frame
-        ret, frame = video_capture.read()
-        
-        if time.time() - start_time >= 4: # <-- Check if 3 sec passed
-            img_name = os.path.join(path, "{}.png".format(user_name))
-            if frame is not None:
-                cv2.imwrite(img_name, frame)
-                print("{} written!".format(user_name))
-                break
-            else:
-                print('Error: frame is none')
-                break
-    # After the loop release the cap object
+    while ret:
+        img_path = os.path.join(path, "{}_.png".format(user_name + "_" + str(d)))
+        cv2.imwrite(img_path, frame)
+        d+=1  
+        if d == 3:
+            break  
+    
     video_capture.release()
-    # Destroy all the windows
     cv2.destroyAllWindows()
-    # Load a sample picture and learn how to recognize it.
-    result  = DeepFace.find(img_path="{}.png".format(user_name), db_path=os.getcwd() + '\\face\known_pics')
+    config.loged_in_usrname = user_name
 
+    return "ok"
 
 @eel.expose
 def face_recogn():
-    # Define a video capture object
-    start_time = time.time()
-    path = 'unknown_face'
-    while(True):
-        # Capture the video frame by frame
-        ret, frame = video_capture.read()
+    path_known_pics = os.getcwd() + r"\face\known_pics"
+    
+    retval, frame = video_capture.read()
+    img_path = os.getcwd() + r"\face\unknown_face\unknown_img.png"
+    if retval != True:
+        raise ValueError("Can't read frame")
         
-        if time.time() - start_time >= 4: # <-- Check if 3 sec passed
-            img_name = os.path.join(path, "unknown_img.png")
-            if frame is not None:
-                cv2.imwrite(img_name, frame)
-                print("unknown face img written!")
-                break
-            else:
-                print('Error: frame is none')
-                break
-
+    cv2.imwrite(img_path, frame)
+    cv2.imshow("unknown_img", frame)
+    # cv2.waitKey()
     video_capture.release()
     cv2.destroyAllWindows()
-    df = DeepFace.find(img_path = "unknown_face/unknown_img.png", db_path = 'known_pics')
+
+    if (os.path.isfile("G:\\Shared drives\\Puilolive Production\\Applicaiton\\face\\known_pics\\representations_vgg_face.pkl") == True):
+        os.remove(os.getcwd() + r"\face\known_pics\representations_vgg_face.pkl")
+    
+    df = DeepFace.find(img_path = img_path, db_path = path_known_pics)
     if df.shape[0] > 0:
         matched = df.iloc[0].identity
         print(matched)
-    return matched
+        global loged_in_usrname
+        loged_in_usrname = os.path.basename(matched)[:-7]
+        print("logged in username:", loged_in_usrname)
+        config.loged_in_usrname = loged_in_usrname
+    
+    return "ok"
